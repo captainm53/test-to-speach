@@ -70,7 +70,7 @@ def findQuestions(qa):
     except:
         print(path + " already exists")
 
-    testList = open("testList.txt", "r+")
+    testList = open("testList.txt", "a+")
     if(qaList[0] in testList.read()) == False:
         testList.write(qaList[0] + '\n')
 
