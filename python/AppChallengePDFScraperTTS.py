@@ -19,8 +19,8 @@ def saveTTS(questions):
         if (q != []):
             for i in q:
                 voiceObj = gTTS(text=i, lang=language, slow=False, lang_check=False)
-                voiceObj.save(path + saveName[j][0] + str(x) + ".mp3")
-                txtSave = open(path + saveName[j][0] + str(x) + ".txt", "w+")
+                voiceObj.save(path + "/"+ saveName[j][0] + str(x) + ".mp3")
+                txtSave = open(path + "/" + saveName[j][0] + str(x) + ".txt", "w+")
                 txtSave.write(i)
                 txtSave.close()
                 j = j + 1
@@ -70,7 +70,7 @@ def findQuestions(qa):
     except:
         print(path + " already exists")
 
-    testList = open("testList.txt", "r+")
+    testList = open("testList.txt", "a+")
     if(qaList[0] in testList.read()) == False:
         testList.write(qaList[0] + '\n')
 
@@ -101,8 +101,8 @@ def findQuestions(qa):
     return qaListPrime
 
 
-#file = input("Enter test file name:")
-file = filedialog.askopenfilename(initialdir=path)
+file = "exampleTest.pdf"
+#file = filedialog.askopenfilename(initialdir=path)
 questions = convert_pdf_to_txt(file)
 debug = open("debug.txt", "w+")
 debug.truncate(0)

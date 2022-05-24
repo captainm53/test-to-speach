@@ -89,7 +89,7 @@ def saveTTS(path):
         x = x + 1
 
 
-questions = convert_pdf_to_txt("testdoc.pdf")
+questions = convert_pdf_to_txt("exampleTest.pdf")
 debug = open("debug.txt", "w")
 debug.truncate(0)
 debug.write(questions)
